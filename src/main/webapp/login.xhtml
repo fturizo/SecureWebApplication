@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <title>Login Page</title>
+        </h:head>
+        <h:body>
+            <p:outputPanel>
+                <div class="ui-g">
+                    <div class="ui-g-4" />
+                    <div class="ui-g-4">
+                        <h3 style="text-align: center;">Login with your credentials</h3>
+                        <h:form id="login">
+                            <p:messages id="messages" globalOnly="true"/>
+                            <h:panelGrid columns="3" cellpadding="3" style="margin: 0 auto;">
+                                <p:outputLabel for="username" value="Username"/>
+                                <p:inputText id="username" value="#{loginController.username}"/>
+                                <p:message for="username"/>
+                                
+                                <p:outputLabel for="password" value="Password"/>
+                                <p:inputText id="password" value="#{loginController.password}" type="password"/>
+                                <p:message for="password"/>
+                                
+                                <p:commandButton id="submit" update="@form" value="Login" action="#{loginController.execute}" ajax="false"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </div>   
+                </div>
+            </p:outputPanel>
+        </h:body>
+    </f:view>
+
+</html>
+

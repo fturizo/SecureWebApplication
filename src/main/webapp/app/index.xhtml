@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <title>User Profile</title>
+        </h:head>
+        <h:body>
+            <h3>This is your user profile!</h3>
+            <p:panel>
+                <p:dataList value="#{homeController.currentQualities}" var="quality" type="ordered">
+                    <f:facet name="header">
+                        #{homeController.currentUser.name}
+                    </f:facet>
+                    #{quality.description}
+                </p:dataList>
+                <f:facet name="footer">
+                    <h:form>
+                        <p:commandButton value="All Users" action="users?faces-redirect=true" rendered="#{homeController.allowedToSeeUsers}"/> 
+                        <p:commandButton value="Logout" action="#{homeController.logout}"/>
+                    </h:form>
+                </f:facet>
+            </p:panel>
+        </h:body>
+    </f:view>    
+</html>
+

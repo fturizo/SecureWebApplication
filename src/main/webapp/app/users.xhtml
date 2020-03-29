@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <title>Users Information</title>
+        </h:head>
+        <h:body>
+            <h3>All Users</h3>
+            <p:panel>
+                <p:dataTable value="#{usersController.allUsers}" var="user">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{user.id}"/>
+                    </p:column>
+                    <p:column headerText="Name">
+                        <h:outputText value="#{user.name}"/>
+                    </p:column>
+                    <p:column headerText="Username">
+                        <h:outputText value="#{user.username}"/>
+                    </p:column>
+                    <p:column headerText="Group">
+                        <h:outputText value="#{user.group}"/>
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </h:body>
+    </f:view>    
+</html>
+
